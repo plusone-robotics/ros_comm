@@ -84,4 +84,13 @@ class TestRoslaunchRlutil(unittest.TestCase):
                 self.fail("should have failed")
             except roslaunch.RLException:
                 pass
-            
+
+    def test_check_roslaunch(self):
+        from roslaunch.rlutil import check_roslaunch
+
+        test_ignore_default_args_p = os.path.join(get_test_path(), 'test', 'xml', 'test-ignore-default-args.launch')
+        try:
+            result = check_roslaunch(test_ignore_default_args_p, ignore_default_args=True)
+            self.assertEqual(result, None)
+        except roslaunch.RLException:
+            pass
