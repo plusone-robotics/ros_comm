@@ -414,7 +414,6 @@ def load_config_default(roslaunch_files, port, roslaunch_strs=None, loader=None,
     config will have a core definition and also set the master to run
     on port.
     @param roslaunch_files: list of launch files to load. Each item may also
-    @type  roslaunch_files: [str]
       be a tuple where the first item is the launch file and the second item
       is a string containing arguments.
     @type  roslaunch_files: [str|(str, str)]
